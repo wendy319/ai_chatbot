@@ -1,2 +1,2 @@
 # ai_chatbot
-Project AI RAG Kuliah UNSIA
+Project AI RAG GAS!!!
