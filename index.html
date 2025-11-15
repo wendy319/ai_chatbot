@@ -99,7 +99,15 @@
         const response = await fetch(WEBHOOK_URL, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ message: text })
+            body: JSON.stringify({
+            message: text,
+            sessionId: localStorage.getItem("sessionId") 
+            || (function(){
+                const id = crypto.randomUUID();
+                localStorage.setItem("sessionId", id);
+                return id;
+           })()
+})
         });
 
         const data = await response.json();
@@ -110,4 +118,5 @@
 
 </body>
 </html>
+
 
